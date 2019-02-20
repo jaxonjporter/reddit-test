@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :subs do 
+    resources :topics
+  end
+
+  root "subs#index"
+  # http -url - controller#action
+  # get "/people", to: "people#index"
+  # get "/people/:id", to: "people#show"
+  # delete "/people/:id", to: "people#destroy"
 end
